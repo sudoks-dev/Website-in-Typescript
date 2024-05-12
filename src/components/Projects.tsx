@@ -1,15 +1,13 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 
-// import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/meter1.png";
 import projImg2 from "../assets/img/meter2.png";
 import projImg3 from "../assets/img/meter3.png";
 // team
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-const colorSharp2 = require("../assets/img/color-sharp2.png") as string
-
+import colorSharp2 from "../assets/img/color-sharp2.png"
 
 export const Projects = () => {
   
@@ -79,7 +77,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="bg-img"></img>
+      <img className="background-image-right" src={colorSharp2} alt="bg-img" />
     </section>
   );
 };

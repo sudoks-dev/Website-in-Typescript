@@ -1,13 +1,8 @@
-// import meter1 from "../assets/img/meter1.png";
-// import meter2 from "../assets/img/meter2.png";
-// import meter3 from "../assets/img/meter3.png";
-// about
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
 
-  const colorSharp =  require("../assets/img/color-sharp.png")
 
   return (
     <section className="skill" id="skills">
@@ -21,7 +16,7 @@ export const Skills = () => {
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        <img className="background-image-left" src={colorSharp} alt="bg-img" />
     </section>
   )
 }
