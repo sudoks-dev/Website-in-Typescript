@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.99260982.css",
+    "main.js": "/static/js/main.9b4c5bb7.js",
+    "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
+    "static/media/color-sharp2.png": "/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
+    "static/media/header-img.png": "/static/media/header-img.7f81b1563effcb367603.png",
+    "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
+    "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
+    "static/media/CentraNo2-Book.ttf": "/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/contact-img.png": "/static/media/contact-img.b99cdb766ab2d8b5cfa5.png",
+    "static/media/footer-bg.png": "/static/media/footer-bg.7bd67c0f73571d0acc02.png",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "main.99260982.css.map": "/static/css/main.99260982.css.map",
+    "main.9b4c5bb7.js.map": "/static/js/main.9b4c5bb7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99260982.css",
+    "static/js/main.9b4c5bb7.js"
+  ]
+}

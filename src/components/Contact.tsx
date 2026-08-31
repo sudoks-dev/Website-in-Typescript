@@ -15,9 +15,7 @@ export const Contact = () => {
   }
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
-
-
+  const [status, setStatus] = useState<{ success: boolean; message: string } | null>(null);
 
   const onFormUpdate = (category: string, value: string) => {
       setFormDetails({
@@ -29,20 +27,30 @@ export const Contact = () => {
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+    setStatus(null);
+    
+    try {
+      let response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+      
+      let result = await response.json();
+      
+      if (response.ok && result.code === 200) {
+        setStatus({ success: true, message: 'Message sent successfully!' });
+        setFormDetails(formInitialDetails);
+      } else {
+        setStatus({ success: false, message: result.message || 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setStatus({ success: false, message: 'Error sending message. Please make sure the server is running and try again.' });
+      console.error(error);
+    } finally {
+      setButtonText("Send");
     }
   };
 
@@ -62,6 +70,18 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h2>Get In Touch</h2>
+                {status && (
+                  <div style={{
+                    padding: '10px 15px',
+                    marginBottom: '15px',
+                    borderRadius: '5px',
+                    backgroundColor: status.success ? '#d4edda' : '#f8d7da',
+                    color: status.success ? '#155724' : '#721c24',
+                    border: `1px solid ${status.success ? '#c3e6cb' : '#f5c6cb'}`
+                  }}>
+                    {status.message}
+                  </div>
+                )}
                 <form onSubmit={handleSubmit}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
